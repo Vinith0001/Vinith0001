@@ -1,4 +1,4 @@
 ## Hi there 👋
 <p align="center">
-  <img src="./banner.svg" alt="Vinith Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/main/banner.svg" width="100%">
 </p>
