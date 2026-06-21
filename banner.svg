@@ -1,252 +1,208 @@
-<svg width="830" height="220" viewBox="0 0 830 220" xmlns="http://www.w3.org/2000/svg" role="img">
+<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
 
   <defs>
-    <style>
-      .nm{font-family:Arial,sans-serif;font-weight:900;font-size:56px;letter-spacing:3px}
-      .sub{font-family:monospace;font-size:13px;letter-spacing:5px}
-      .tg{font-family:monospace;font-size:10px}
-      .top{font-family:monospace;font-size:10px;letter-spacing:3px}
-      .bot{font-family:monospace;font-size:9px;letter-spacing:3px}
 
-      .blink{animation:blink 1s steps(1) infinite}
-      @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-
-      .hue{animation:hue 6s linear infinite}
-      @keyframes hue{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(40deg)}}
-
-      .pulse{animation:pulse 2s ease-in-out infinite}
-      @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
-
-      .fd1{animation:fd 5s ease-in-out infinite}
-      .fd2{animation:fd 7s ease-in-out infinite reverse}
-      .fd3{animation:fd 4s ease-in-out infinite}
-      @keyframes fd{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-    </style>
-
-    <linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00ffe7"/>
-      <stop offset="50%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#a78bfa"/>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1E293B"/>
     </linearGradient>
 
-    <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00ffe7" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#00ffe7"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    <!-- Animated Name Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8">
+        <animate attributeName="stop-color"
+                 values="#38BDF8;#8B5CF6;#38BDF8"
+                 dur="5s"
+                 repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#8B5CF6">
+        <animate attributeName="stop-color"
+                 values="#8B5CF6;#38BDF8;#8B5CF6"
+                 dur="5s"
+                 repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
 
-    <radialGradient id="glow">
-      <stop offset="0%" stop-color="#00ffe7" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#00ffe7" stop-opacity="0"/>
-    </radialGradient>
+    <!-- Accent Gradient -->
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
   </defs>
 
   <!-- Background -->
-  <rect width="830" height="220" fill="#000000" rx="12"/>
-  <rect width="830" height="220" fill="url(#glow)" rx="12"/>
+  <rect width="1000" height="300" rx="20" fill="url(#bg)"/>
 
-  <!-- Border -->
-  <rect width="829" height="219" x="0.5" y="0.5"
-        fill="none"
-        stroke="#00ffe7"
-        stroke-width="0.5"
-        stroke-opacity="0.2"
-        rx="12"/>
-
-  <!-- Grid -->
-  <g stroke="#00ffe7" stroke-width="0.4" opacity="0.03">
-    <line x1="0" y1="55" x2="830" y2="55"/>
-    <line x1="0" y1="110" x2="830" y2="110"/>
-    <line x1="0" y1="165" x2="830" y2="165"/>
-
-    <line x1="100" y1="0" x2="100" y2="220"/>
-    <line x1="207" y1="0" x2="207" y2="220"/>
-    <line x1="415" y1="0" x2="415" y2="220"/>
-    <line x1="623" y1="0" x2="623" y2="220"/>
-    <line x1="730" y1="0" x2="730" y2="220"/>
-  </g>
-
-  <!-- Ripple Rings -->
-  <circle cx="415" cy="110" r="60"
-          fill="none"
-          stroke="#00ffe7"
-          stroke-width="0.8"
-          opacity="0.3"/>
-
-  <circle cx="415" cy="110" r="90"
-          fill="none"
-          stroke="#a78bfa"
-          stroke-width="0.6"
-          opacity="0.15"/>
-
-  <!-- Orbit Ring -->
-  <ellipse cx="415" cy="110"
-           rx="370"
-           ry="90"
-           fill="none"
-           stroke="#00ffe7"
-           stroke-width="0.4"
-           stroke-dasharray="5 12"
-           opacity="0.12"/>
-
-  <!-- Corner Brackets -->
-  <path d="M14,32 L14,14 L32,14"
-        fill="none"
-        stroke="#00ffe7"
-        stroke-width="1.8"
-        opacity="0.6"/>
-
-  <path d="M798,14 L816,14 L816,32"
-        fill="none"
-        stroke="#00ffe7"
-        stroke-width="1.8"
-        opacity="0.6"/>
-
-  <path d="M14,188 L14,206 L32,206"
-        fill="none"
-        stroke="#00ffe7"
-        stroke-width="1.8"
-        opacity="0.6"/>
-
-  <path d="M798,206 L816,206 L816,188"
-        fill="none"
-        stroke="#00ffe7"
-        stroke-width="1.8"
-        opacity="0.6"/>
+  <!-- Decorative Glow Circles -->
+  <circle cx="850" cy="70" r="90" fill="#38BDF8" opacity="0.08"/>
+  <circle cx="930" cy="220" r="120" fill="#8B5CF6" opacity="0.08"/>
 
   <!-- Floating Particles -->
-  <g class="fd1">
-    <circle cx="780" cy="28" r="2" fill="#00ffe7"/>
-  </g>
+  <circle cx="870" cy="80" r="3" fill="#38BDF8">
+    <animate attributeName="cy"
+             values="80;60;80"
+             dur="5s"
+             repeatCount="indefinite"/>
+  </circle>
 
-  <g class="fd2">
-    <circle cx="50" cy="192" r="2" fill="#a78bfa"/>
-  </g>
+  <circle cx="920" cy="220" r="3" fill="#8B5CF6">
+    <animate attributeName="cy"
+             values="220;200;220"
+             dur="6s"
+             repeatCount="indefinite"/>
+  </circle>
 
-  <g class="fd3">
-    <circle cx="415" cy="20" r="2" fill="#4ade80"/>
-  </g>
+  <circle cx="780" cy="230" r="2" fill="#22C55E">
+    <animate attributeName="cy"
+             values="230;210;230"
+             dur="4s"
+             repeatCount="indefinite"/>
+  </circle>
 
-  <!-- Top Label -->
-  <text x="415"
-        y="28"
-        text-anchor="middle"
-        class="top"
-        fill="#4ade80">
-    [ INITIALIZING // VINITH.SYS // v2.0 ]
-  </text>
+  <!-- Left Accent Bar -->
+  <rect x="60"
+        y="50"
+        width="6"
+        height="200"
+        rx="5"
+        fill="url(#accent)"/>
 
   <!-- Name -->
-  <text x="415"
-        y="107"
-        text-anchor="middle"
-        class="nm hue"
-        fill="url(#ng)">
+  <text x="100"
+        y="115"
+        font-family="Segoe UI, Arial"
+        font-size="56"
+        font-weight="700"
+        fill="url(#textGrad)">
     VINITH R
   </text>
 
-  <!-- Cursor -->
-  <rect x="610"
-        y="63"
-        width="3"
-        height="50"
-        fill="#00ffe7"
-        class="blink"/>
-
-  <!-- Divider -->
-  <rect x="95"
-        y="118"
-        width="640"
-        height="1"
-        fill="url(#lg)"/>
-
-  <g class="pulse">
-    <circle cx="95" cy="118" r="3.5" fill="#00ffe7"/>
-  </g>
-
-  <g class="pulse">
-    <circle cx="735" cy="118" r="3.5" fill="#a78bfa"/>
-  </g>
-
-  <!-- Tagline -->
-  <text x="415"
-        y="140"
-        text-anchor="middle"
-        class="sub"
-        fill="#4ade80">
+  <!-- Role -->
+  <text x="100"
+        y="160"
+        font-family="Segoe UI, Arial"
+        font-size="22"
+        fill="#CBD5E1">
     AI &amp; DATA SCIENCE STUDENT
   </text>
 
-  <!-- Skills -->
-  <g>
+  <!-- Description -->
+  <text x="100"
+        y="200"
+        font-family="Segoe UI, Arial"
+        font-size="18"
+        fill="#94A3B8">
+    Building Intelligent Applications • Machine Learning • FastAPI
+  </text>
 
-    <rect x="70" y="153" width="80" height="18" rx="3"
-          fill="#00ffe710" stroke="#00ffe720"/>
-    <text x="110" y="166"
-          text-anchor="middle"
-          class="tg"
-          fill="#00ffe7">
-      Python
-    </text>
+  <!-- Skill Pills -->
 
-    <rect x="165" y="153" width="90" height="18" rx="3"
-          fill="#a78bfa10" stroke="#a78bfa20"/>
-    <text x="210" y="166"
-          text-anchor="middle"
-          class="tg"
-          fill="#a78bfa">
-      FastAPI
-    </text>
+  <rect x="100" y="230" width="95" height="34" rx="17"
+        fill="#1E293B" stroke="#38BDF8" stroke-opacity="0.3"/>
+  <text x="125" y="252"
+        fill="#38BDF8"
+        font-size="14"
+        font-family="Segoe UI">
+    Python
+  </text>
 
-    <rect x="270" y="153" width="135" height="18" rx="3"
-          fill="#4ade8010" stroke="#4ade8020"/>
-    <text x="337" y="166"
-          text-anchor="middle"
-          class="tg"
-          fill="#4ade80">
-      Machine Learning
-    </text>
+  <rect x="210" y="230" width="155" height="34" rx="17"
+        fill="#1E293B" stroke="#8B5CF6" stroke-opacity="0.3"/>
+  <text x="235" y="252"
+        fill="#8B5CF6"
+        font-size="14"
+        font-family="Segoe UI">
+    Machine Learning
+  </text>
 
-    <rect x="420" y="153" width="115" height="18" rx="3"
-          fill="#fb923c10" stroke="#fb923c20"/>
-    <text x="477" y="166"
-          text-anchor="middle"
-          class="tg"
-          fill="#fb923c">
-      Data Science
-    </text>
+  <rect x="380" y="230" width="105" height="34" rx="17"
+        fill="#1E293B" stroke="#22C55E" stroke-opacity="0.3"/>
+  <text x="405" y="252"
+        fill="#22C55E"
+        font-size="14"
+        font-family="Segoe UI">
+    FastAPI
+  </text>
 
-    <rect x="550" y="153" width="125" height="18" rx="3"
-          fill="#00ffe710" stroke="#00ffe720"/>
-    <text x="612" y="166"
+  <rect x="500" y="230" width="115" height="34" rx="17"
+        fill="#1E293B" stroke="#F59E0B" stroke-opacity="0.3"/>
+  <text x="525" y="252"
+        fill="#F59E0B"
+        font-size="14"
+        font-family="Segoe UI">
+    PostgreSQL
+  </text>
+
+  <rect x="630" y="230" width="125" height="34" rx="17"
+        fill="#1E293B" stroke="#38BDF8" stroke-opacity="0.3"/>
+  <text x="655" y="252"
+        fill="#38BDF8"
+        font-size="14"
+        font-family="Segoe UI">
+    Deep Learning
+  </text>
+
+  <!-- AI Orb -->
+  <g filter="url(#glow)">
+
+    <circle cx="820"
+            cy="140"
+            r="55"
+            fill="none"
+            stroke="#38BDF8"
+            stroke-width="2"
+            opacity="0.5">
+
+      <animate attributeName="r"
+               values="55;65;55"
+               dur="4s"
+               repeatCount="indefinite"/>
+
+      <animate attributeName="opacity"
+               values="0.5;0.8;0.5"
+               dur="4s"
+               repeatCount="indefinite"/>
+
+    </circle>
+
+    <circle cx="820"
+            cy="140"
+            r="35"
+            fill="#38BDF8"
+            opacity="0.08"/>
+
+    <text x="820"
+          y="152"
           text-anchor="middle"
-          class="tg"
-          fill="#00ffe7">
-      Deep Learning
+          font-family="Segoe UI"
+          font-size="42"
+          font-weight="700"
+          fill="#38BDF8">
+      AI
     </text>
 
   </g>
 
-  <!-- Side Decorations -->
-  <polygon points="36,100 44,96 52,100 52,108 44,112 36,108"
-           fill="none"
-           stroke="#00ffe7"
-           stroke-width="0.8"
-           opacity="0.3"/>
-
-  <polygon points="778,100 786,96 794,100 794,108 786,112 778,108"
-           fill="none"
-           stroke="#a78bfa"
-           stroke-width="0.8"
-           opacity="0.3"/>
-
-  <!-- Bottom Quote -->
-  <text x="415"
-        y="210"
+  <!-- Footer -->
+  <text x="820"
+        y="215"
         text-anchor="middle"
-        class="bot"
-        fill="#4ade80">
-    // BUILDING AI SOLUTIONS FOR REAL-WORLD PROBLEMS //
+        font-family="Segoe UI"
+        font-size="16"
+        fill="#94A3B8">
+    Learn • Build • Deploy
   </text>
 
 </svg>
