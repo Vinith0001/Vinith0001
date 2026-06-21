@@ -18,3 +18,21 @@ Hi, I'm Vinith — a B.Tech AI & Data Science student building my way toward SDE
 **Databases:** MySQL • PostgreSQL • MongoDB • Milvus
 
 **Core CS:** DSA • OOP • OS • DBMS • Computer Networks
+
+##📬 Contact Me
+
+<p align="center">
+
+<a href="mailto:r.vinith777@gmail.com">
+  <img src="https://img.shields.io/badge/Gmail-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
+
+<a href="https://github.com/Vinith0001" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+
+<a href="https://leetcode.com/u/VINITH777/" target="_blank">
+  <img src="https://img.shields.io/badge/LeetCode-Profile-FFA116?style=for-the-badge&logo=leetcode&logoColor=white" />
+</a>
+
+</p>
