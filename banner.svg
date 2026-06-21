@@ -1,88 +1,252 @@
-<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
+<svg width="830" height="220" viewBox="0 0 830 220" xmlns="http://www.w3.org/2000/svg" role="img">
 
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="50%" stop-color="#111827"/>
-      <stop offset="100%" stop-color="#1E293B"/>
+    <style>
+      .nm{font-family:Arial,sans-serif;font-weight:900;font-size:56px;letter-spacing:3px}
+      .sub{font-family:monospace;font-size:13px;letter-spacing:5px}
+      .tg{font-family:monospace;font-size:10px}
+      .top{font-family:monospace;font-size:10px;letter-spacing:3px}
+      .bot{font-family:monospace;font-size:9px;letter-spacing:3px}
+
+      .blink{animation:blink 1s steps(1) infinite}
+      @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+      .hue{animation:hue 6s linear infinite}
+      @keyframes hue{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(40deg)}}
+
+      .pulse{animation:pulse 2s ease-in-out infinite}
+      @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+      .fd1{animation:fd 5s ease-in-out infinite}
+      .fd2{animation:fd 7s ease-in-out infinite reverse}
+      .fd3{animation:fd 4s ease-in-out infinite}
+      @keyframes fd{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    </style>
+
+    <linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ffe7"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
     </linearGradient>
 
-    <linearGradient id="text" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="100%" stop-color="#8B5CF6"/>
+    <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ffe7" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00ffe7"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
     </linearGradient>
 
-    <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="100%" stop-color="#8B5CF6"/>
-    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#00ffe7" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#00ffe7" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="1000" height="300" fill="url(#bg)" rx="20"/>
+  <rect width="830" height="220" fill="#000000" rx="12"/>
+  <rect width="830" height="220" fill="url(#glow)" rx="12"/>
 
-  <!-- Decorative circles -->
-  <circle cx="850" cy="70" r="90" fill="#38BDF8" opacity="0.08"/>
-  <circle cx="930" cy="220" r="120" fill="#8B5CF6" opacity="0.08"/>
+  <!-- Border -->
+  <rect width="829" height="219" x="0.5" y="0.5"
+        fill="none"
+        stroke="#00ffe7"
+        stroke-width="0.5"
+        stroke-opacity="0.2"
+        rx="12"/>
 
-  <!-- Left Accent -->
-  <rect x="60" y="50" width="6" height="200" fill="url(#line)" rx="5"/>
+  <!-- Grid -->
+  <g stroke="#00ffe7" stroke-width="0.4" opacity="0.03">
+    <line x1="0" y1="55" x2="830" y2="55"/>
+    <line x1="0" y1="110" x2="830" y2="110"/>
+    <line x1="0" y1="165" x2="830" y2="165"/>
 
-  <!-- Main Name -->
-  <text x="100" y="120"
-        font-family="Segoe UI"
-        font-size="52"
-        font-weight="700"
-        fill="url(#text)">
-      VINITH R
+    <line x1="100" y1="0" x2="100" y2="220"/>
+    <line x1="207" y1="0" x2="207" y2="220"/>
+    <line x1="415" y1="0" x2="415" y2="220"/>
+    <line x1="623" y1="0" x2="623" y2="220"/>
+    <line x1="730" y1="0" x2="730" y2="220"/>
+  </g>
+
+  <!-- Ripple Rings -->
+  <circle cx="415" cy="110" r="60"
+          fill="none"
+          stroke="#00ffe7"
+          stroke-width="0.8"
+          opacity="0.3"/>
+
+  <circle cx="415" cy="110" r="90"
+          fill="none"
+          stroke="#a78bfa"
+          stroke-width="0.6"
+          opacity="0.15"/>
+
+  <!-- Orbit Ring -->
+  <ellipse cx="415" cy="110"
+           rx="370"
+           ry="90"
+           fill="none"
+           stroke="#00ffe7"
+           stroke-width="0.4"
+           stroke-dasharray="5 12"
+           opacity="0.12"/>
+
+  <!-- Corner Brackets -->
+  <path d="M14,32 L14,14 L32,14"
+        fill="none"
+        stroke="#00ffe7"
+        stroke-width="1.8"
+        opacity="0.6"/>
+
+  <path d="M798,14 L816,14 L816,32"
+        fill="none"
+        stroke="#00ffe7"
+        stroke-width="1.8"
+        opacity="0.6"/>
+
+  <path d="M14,188 L14,206 L32,206"
+        fill="none"
+        stroke="#00ffe7"
+        stroke-width="1.8"
+        opacity="0.6"/>
+
+  <path d="M798,206 L816,206 L816,188"
+        fill="none"
+        stroke="#00ffe7"
+        stroke-width="1.8"
+        opacity="0.6"/>
+
+  <!-- Floating Particles -->
+  <g class="fd1">
+    <circle cx="780" cy="28" r="2" fill="#00ffe7"/>
+  </g>
+
+  <g class="fd2">
+    <circle cx="50" cy="192" r="2" fill="#a78bfa"/>
+  </g>
+
+  <g class="fd3">
+    <circle cx="415" cy="20" r="2" fill="#4ade80"/>
+  </g>
+
+  <!-- Top Label -->
+  <text x="415"
+        y="28"
+        text-anchor="middle"
+        class="top"
+        fill="#4ade80">
+    [ INITIALIZING // VINITH.SYS // v2.0 ]
   </text>
 
-  <!-- Role -->
-  <text x="100" y="165"
-        font-family="Segoe UI"
-        font-size="22"
-        fill="#CBD5E1">
-      AI & Data Science Student
+  <!-- Name -->
+  <text x="415"
+        y="107"
+        text-anchor="middle"
+        class="nm hue"
+        fill="url(#ng)">
+    VINITH R
   </text>
 
-  <!-- Description -->
-  <text x="100" y="205"
-        font-family="Segoe UI"
-        font-size="18"
-        fill="#94A3B8">
-      Building AI Applications • Machine Learning • FastAPI
+  <!-- Cursor -->
+  <rect x="610"
+        y="63"
+        width="3"
+        height="50"
+        fill="#00ffe7"
+        class="blink"/>
+
+  <!-- Divider -->
+  <rect x="95"
+        y="118"
+        width="640"
+        height="1"
+        fill="url(#lg)"/>
+
+  <g class="pulse">
+    <circle cx="95" cy="118" r="3.5" fill="#00ffe7"/>
+  </g>
+
+  <g class="pulse">
+    <circle cx="735" cy="118" r="3.5" fill="#a78bfa"/>
+  </g>
+
+  <!-- Tagline -->
+  <text x="415"
+        y="140"
+        text-anchor="middle"
+        class="sub"
+        fill="#4ade80">
+    AI &amp; DATA SCIENCE STUDENT
   </text>
 
   <!-- Skills -->
-  <rect x="100" y="235" width="110" height="30" rx="15" fill="#1E293B"/>
-  <text x="125" y="255" fill="#38BDF8" font-size="14">Python</text>
+  <g>
 
-  <rect x="225" y="235" width="150" height="30" rx="15" fill="#1E293B"/>
-  <text x="245" y="255" fill="#8B5CF6" font-size="14">Machine Learning</text>
+    <rect x="70" y="153" width="80" height="18" rx="3"
+          fill="#00ffe710" stroke="#00ffe720"/>
+    <text x="110" y="166"
+          text-anchor="middle"
+          class="tg"
+          fill="#00ffe7">
+      Python
+    </text>
 
-  <rect x="390" y="235" width="120" height="30" rx="15" fill="#1E293B"/>
-  <text x="420" y="255" fill="#22C55E" font-size="14">FastAPI</text>
+    <rect x="165" y="153" width="90" height="18" rx="3"
+          fill="#a78bfa10" stroke="#a78bfa20"/>
+    <text x="210" y="166"
+          text-anchor="middle"
+          class="tg"
+          fill="#a78bfa">
+      FastAPI
+    </text>
 
-  <rect x="525" y="235" width="130" height="30" rx="15" fill="#1E293B"/>
-  <text x="550" y="255" fill="#F59E0B" font-size="14">Deep Learning</text>
+    <rect x="270" y="153" width="135" height="18" rx="3"
+          fill="#4ade8010" stroke="#4ade8020"/>
+    <text x="337" y="166"
+          text-anchor="middle"
+          class="tg"
+          fill="#4ade80">
+      Machine Learning
+    </text>
 
-  <!-- Right Side -->
-  <text x="760" y="140"
+    <rect x="420" y="153" width="115" height="18" rx="3"
+          fill="#fb923c10" stroke="#fb923c20"/>
+    <text x="477" y="166"
+          text-anchor="middle"
+          class="tg"
+          fill="#fb923c">
+      Data Science
+    </text>
+
+    <rect x="550" y="153" width="125" height="18" rx="3"
+          fill="#00ffe710" stroke="#00ffe720"/>
+    <text x="612" y="166"
+          text-anchor="middle"
+          class="tg"
+          fill="#00ffe7">
+      Deep Learning
+    </text>
+
+  </g>
+
+  <!-- Side Decorations -->
+  <polygon points="36,100 44,96 52,100 52,108 44,112 36,108"
+           fill="none"
+           stroke="#00ffe7"
+           stroke-width="0.8"
+           opacity="0.3"/>
+
+  <polygon points="778,100 786,96 794,100 794,108 786,112 778,108"
+           fill="none"
+           stroke="#a78bfa"
+           stroke-width="0.8"
+           opacity="0.3"/>
+
+  <!-- Bottom Quote -->
+  <text x="415"
+        y="210"
         text-anchor="middle"
-        font-family="Segoe UI"
-        font-size="70"
-        font-weight="700"
-        fill="#38BDF8"
-        opacity="0.15">
-      AI
-  </text>
-
-  <text x="760" y="190"
-        text-anchor="middle"
-        font-family="Segoe UI"
-        font-size="18"
-        fill="#94A3B8">
-      Learning • Building • Innovating
+        class="bot"
+        fill="#4ade80">
+    // BUILDING AI SOLUTIONS FOR REAL-WORLD PROBLEMS //
   </text>
 
 </svg>
